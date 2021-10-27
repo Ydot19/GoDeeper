@@ -1,0 +1,28 @@
+syntax = "proto3";
+// Use the lowest number for the most frequently used fields
+// Indexing at lower bytes --> increased speed
+
+// specific to golang
+option go_package = "github.com/Ydot19/GoDeeper/protobuff101/model";
+
+message Book {
+        int32 Id = 1;
+        string Title = 2;
+        repeated Author Authors = 3;
+        Category Category = 4;
+}
+
+
+enum Category {
+      Novel = 0;
+      Scifi = 1;
+      Fantasy = 2;
+      Spiritual = 3;
+}
+
+message Author {
+        int32 Id = 1;
+        string Name = 2;
+}
+
+
